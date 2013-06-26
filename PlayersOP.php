@@ -26,7 +26,7 @@ class PlayersOP implements Plugin {
     	
     			$user = $data->username;
     			$this->api->ban->commandHandler("op", $user, "console", false);
-    	        $this->api->chat->brodcast("$user is now OP!");
+    	        $this->api->chat->broadcast("$user is now OP!");
        	}
     	
     }
