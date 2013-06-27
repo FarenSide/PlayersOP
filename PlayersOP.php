@@ -1,7 +1,7 @@
 /* 
 name=PlayersOP
 description=Everyone who join is OP! 
-version=1.0
+version=1.1
 author=Junyi00
 class=PlayersOP
 apiversion=9
