@@ -1,7 +1,7 @@
 /* 
 name=PlayersOP
 description=Everyone who join is OP! 
-version=1.1
+version=1.2
 author=Junyi00
 class=PlayersOP
 apiversion=9
@@ -15,7 +15,7 @@ class PlayersOP implements Plugin {
     }
 
     public function init() {
-        $this->api->addHandler('player.join', array($this, 'OPPlayer'));
+        $this->api->addHandler('player.spawn', array($this, 'OPPlayer'));
         $this->api->console->register('checkkop', 'Check if u are op!', array($this, 'CheckOp'));
 
     }
@@ -24,10 +24,13 @@ class PlayersOP implements Plugin {
 
     public function OPPlayer($data, $event) {
         switch($event) {
-    		case "player.join":
+    		case "player.spawn":
     	
     			$user = $data->username;
     			$this->api->ban->commandHandler("op", $user, "console", false);
+    			$this->api->chat->sendTo(false,"You are op!",$data->iusername);
+    			break;
+    			
        	}
     	
     }
